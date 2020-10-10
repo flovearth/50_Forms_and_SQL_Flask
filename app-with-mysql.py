@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['MYSQL_DATABASE_HOST'] = 'database-eu.chpnotdggi7d.eu-central-1.rds.amazonaws.com'
 app.config['MYSQL_DATABASE_USER'] = 'admin'
 app.config['MYSQL_DATABASE_PASSWORD'] = '123456789'
-app.config['MYSQL_DATABASE_DB'] = 'flovearth'
+app.config['MYSQL_DATABASE_DB'] = 'initialDatabaseName'
 app.config['MYSQL_DATABASE_PORT'] = 3306
 mysql = MySQL()
 mysql.init_app(app)
@@ -29,7 +29,7 @@ CREATE TABLE users (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 """
 data = """
-INSERT INTO clarusway.users 
+INSERT INTO initialDatabaseName.users 
 VALUES 
     ("Buddy Rich", "buddy@clarusway.com" ),
     ("Candido", "candido@clarusway.com"),
@@ -107,5 +107,5 @@ def add_email():
 
 # Add a statement to run the Flask application which can be reached from any host on port 80.
 if __name__ == '__main__':
-#    app.run(debug=True)
-   app.run(host='0.0.0.0', port=80)
+   app.run(debug=True)
+#    app.run(host='0.0.0.0', port=80)
